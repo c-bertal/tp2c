@@ -13,11 +13,35 @@
  *
  */
 
-int tkt(int n, int valeursc, int * valeurs){
+int sum(int nbc, int * nbtab){
+    int total = 0;
+    for(int i=0; i<nbc; i++){
+        total = total + nbtab[i];
+    }
+    return total;
+}
+
+int tkt(int n, int valeursc, int * valeurs, int result){
 
     // On met toutes les variables au minimum
     // On incremente x^(n-1) avec la valeur suivante
+    int solutions[n];
+    for(int i=0; i<n; i++){
+        solutions[i] = valeurs[0];
+    }
 
+    if(sum(n, solutions) == result){
+        // on a trouve les solutions
+        printf("Solution :");
+        for(int i=0;i<n;i++){
+            printf(" %d", solutions[i]);
+        }
+        printf("\n");
+        return 1;
+    }else{
+        // ajoute valeurs[n+1] au dernier. si il est au max des valeurs, on fait l'avant dernier etc...
+
+    }
 
 
 
@@ -34,9 +58,10 @@ int main(int argc, char * argv[]) {
     valeurs[4] = 9;
 
     int n = 10;
+    int result = 52;
 
     int ret;
-    ret = tkt(n, 5, valeurs);
+    ret = tkt(n, 5, valeurs, result);
 
     printf("%d", ret);
 
