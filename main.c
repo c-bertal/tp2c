@@ -13,8 +13,32 @@
  *
  */
 
+int tkt(int n, int valeursc, int * valeurs){
+
+    // On met toutes les variables au minimum
+    // On incremente x^(n-1) avec la valeur suivante
+
+
+
+
+    return 0;
+}
+
 
 int main(int argc, char * argv[]) {
-    printf("Hello, World!\n");
+    int valeurs[5];
+    valeurs[0] = 2;
+    valeurs[1] = 3;
+    valeurs[2] = 5;
+    valeurs[3] = 7;
+    valeurs[4] = 9;
+
+    int n = 10;
+
+    int ret;
+    ret = tkt(n, 5, valeurs);
+
+    printf("%d", ret);
+
     return 0;
 }
